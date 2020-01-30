@@ -10,9 +10,18 @@ export class FirebaseService {
   constructor(private firestore: AngularFirestore) { }
 
   getExpenditure() {
-    // return this.firestore.collection('goldenExpenditureList').snapshotChanges();
-    let citiesRef = this.firestore.collection('goldenExpenditureList').get();
-    return citiesRef;
+    let exp = this.firestore.collection('goldenExpenditureList').get();
+    return exp;
+  }
+
+  getInvestment() {
+    let invest = this.firestore.collection('goldenInvestmentList').get();
+    return invest;
+  }
+
+  getSHistory() {
+    let hsavings = this.firestore.collection('goldenHistorySavings').get();
+    return hsavings;
   }
 
 }
